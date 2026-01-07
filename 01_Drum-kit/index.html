@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DRUM KIT</title>
+  </head>
+  <body>
+    <div>
+      <button data-key="65">a</button>
+      <button data-key="83">s</button>
+      <button data-key="68">d</button>
+      <button data-key="70">f</button>
+      <button data-key="71">g</button>
+      <button data-key="74">j</button>
+      <button data-key="75">k</button>
+      <button data-key="76">l</button>
+    </div>
+    <audio data-key="65" src="Sounds/boom.wav"></audio>
+    <audio data-key="83" src="Sounds/clap.wav"></audio>
+    <audio data-key="68" src="Sounds/hihat.wav"></audio>
+    <audio data-key="70" src="Sounds/kick.wav"></audio>
+    <audio data-key="71" src="Sounds/openhat.wav"></audio>
+    <audio data-key="74" src="Sounds/ride.wav"></audio>
+    <audio data-key="75" src="Sounds/snare.wav"></audio>
+    <audio data-key="76" src="Sounds/tom.wav"></audio>
+    <script>
+      window.addEventListener("keydown", (e) => {
+        const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        if (!audio) return;
+        audio.currentTime = 0;
+        audio.play();
+      });
+    </script>
+  </body>
+</html>
